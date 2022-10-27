@@ -24,8 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', paginas.index, name='index'),
     path('index/', paginas.index, name='index'),
+    path('home/', paginas.home, name='home'),
     path('pagina1/', paginas.pagina1, name='pagina1'),
     path('pagina2/', paginas.pagina2, name='pagina2'),
+    path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
     path('repositorio', Repositorio.listar, name='repositorio'),
