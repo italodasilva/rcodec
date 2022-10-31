@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+
+</head>
+    <body style ="background-color: white; font-family: Georgia, 'Times New Roman', Times, serif;">
+        <div class="card-menu" style="display: block; ">
+            <div class="matematica" style="display: flex;">
+                <div class="card" style="height: 350px; width: auto; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/matematica.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-calculator" style="color: black;"></i> Matemática</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Matemática.</p>
+                    <a href="{% url 'repositorio' %}" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/fisica.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><img src="{% static 'images/atomo.png'%}" alt="image" height="25px"> Física</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Física.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/quimica.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-flask" style="color: black"></i> Química</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Química.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+            </div>
+            <div class="ciencia" style="display: flex;">
+                <div class="card" style="height: 350px; width: auto; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/biologia.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-sharp fa-solid fa-microscope" style="color: black;"></i> Biologia</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Biologia.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/geografia.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-map-location-dot" style="color: black;"></i> Geografia</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Geografia.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/historia.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-book" style="color: black;"></i> História</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de História.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+            </div>
+            <div class="linguagens" style="display: flex;">
+                <div class="card" style="height: 350px; width: auto; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/portugues.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-book-open-reader" style="color: black;"></i> Português e Literatura</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Português.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/ingles.jpeg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-book" style="color: black;"></i> English</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Inglês.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/educacao.jpeg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-person-running" style="color: black"></i> Educação Física</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de Educação Física.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+            </div>
+            <div class="tecnico" style="display: flex; justify-content: center;">
+                <div class="card" style="height: 350px; width: auto; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/portugues.jpg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-laptop" style="color: black;"></i> Desenvolvimento de P.I</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório de P.I.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+                <div class="card" style="height: 350px; width: 400px; text-align: center; justify-content: center; align-items: center; padding: 12px 18px; margin: 5px 15px 15px 20px;">
+                    <img src="{% static 'images/ingles.jpeg'%}" alt="image" height="150px">
+                    <h2 style="font-family: Courier New, monospace; font-size: 26px; margin-top: 15px; color: green;"><i class="fa-solid fa-user" style="color: black;"></i> Ensino Tecnico</h2>
+                    <p style="font-family: Apple Chancery, cursive; color: green;">Clique aqui para acessar o repositório do Ensino Técnico.</p>
+                    <a href="#" class="btn" style="background-color: green; color: white; padding: 8px 12px; width: 200px;"><i class="fa-solid fa-folder-open"></i> Acesse aqui</a>
+                </div>
+            </div>    
+        </div>
+    </body>
+{% endblock %}
