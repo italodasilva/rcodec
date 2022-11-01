@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCODEC</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="header" style="background-color: green; display: flex; justify-content: center; align-items: center; height: 150px;">
+        <div class="imagem">
+            <a href="{% url 'index' %}" class="link">
+                <img src="{% static 'images/Imagem2.png'%}" alt="image" height="50px">
+            </a>
+        </div>
+        <div class="menu" style="display: flex;">
+        {% if request.user.is_authenticated %}
+            <p style="margin-left: 50px; color: white; border: 2px solid white; border-radius: 4px; padding: 4px 8px;">Prazer {{ request.user.username}}, seja Bem-vindo!</p>
+            <a href="{% url 'home' %}" style="color: white; margin-right: 50px; margin-left: 40PX;"><i class="fa-solid fa-house"></i> HOME</a>
+            <a href="{% url 'repositorio.criar' %}" style="color: white; margin-right: 15px;"><i class="fa-solid fa-plus"></i> CADASTRAR</a>
+            <a href="{% url 'logout' %}" style="color: white; margin-left: 40px;"><i class="fa-solid fa-arrow-right-from-bracket"></i> SAIR</a>
+        {% endif %}
+        </div>
+    </div>
+    <div class="container" style="margin-top: 80px;">
+        {% block conteudo %}
+        
+        {% endblock %}
+    </div>
+    <footer class="links" style="background-color: black; bottom: 0; left: 0; width: 100%; height: 300px; margin-top: 200px; display: flex;">
+        <div class="cometario" style="margin-top: 80px; margin-left: 80px;">
+            <p style="color: white;">Criado pela Lei nº 11.892, de 29 de dezembro de 2008, o IFMG foi <br> inicialmente formado pela incorporação da Escola Agrotécnica <br> Federal de São João Evangelista, dos Cefets de Ouro Preto e <br> Bambuí e das Uneds de Formiga e Congonhas. Hoje, são 18 campi <br> no Estado.</p>
+            <a href="https://www.ifmg.edu.br/portal/sobre-o-ifmg/historico-e-missao" style="color: green;">Leia mais>>></a>
+        </div>
+        <div class="foot-links" style="margin-top: 80px; margin-left: 140px;">
+            <h2 style="color: white;">Informação</h2>
+             <ul>
+                <li><a href="https://www.ifmg.edu.br/portal/sobre-o-ifmg/nossas-unidades" target="_blank" style="color: white;">Nossas Unidades</a></li><li><a href="https://www.ifmg.edu.br/portal/ensino/apresentacao" target="_blank" style="color: white;">Ensino</a></li><li><a href="https://www.ifmg.edu.br/portal/extensao/informacoes-gerais" target="_blank" style="color: white;">Extensão</a></li><li><a href="https://www.ifmg.edu.br/portal/pesquisa-e-pos-graduacao/informacoes-gerais" target="_blank" style="color: white;">Pesquisa e Pós-graduação</a></li>
+             </ul>
+          </div>
+    </footer>
+</body>
+</html>
