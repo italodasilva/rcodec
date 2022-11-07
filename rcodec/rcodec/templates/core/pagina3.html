@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+
+    </head>
+    <body style ="background-color: white; font-family: Georgia, 'Times New Roman', Times, serif;">
+
+    <div class="repositorio" style="border: 1px solid gray; border-radius: 4px; padding: 8px 12px; display: block;">
+        <div class="titulo" style="text-align: center;">
+            <a href="{% url 'index'%}" style="color: green; align-items: left;">Inicio</a>
+            <h1 style="color: green; font-size: 36px;">REPOSITÓRIO VITRINE</h1>
+            <p>
+                <a href="{% url 'tcc.criar' %}" class="btn btn-success" style="margin-top: 5px; margin-bottom: 5px;background-color: green; width: 250px; padding: 10px; border: none; font-size: 20px;"><i class="fa-solid fa-plus"></i> Criar arquivo</a>
+            </p>
+        </div>
+
+        <div class="conteudo">
+            {% for t in tcc %}
+                <h2 style="font-size: 22px; color:green">{{ t.descricao }} </h2>
+                <br>
+                <h3 style="font-size: 18px; margin-top: -15px">Materia: {{ t.materia }}</h3>
+                <br>
+                <div class="pdf" style="margin-bottom: 20px;">
+                    <a href="{{ t.arquivo.url }}" style="border: 1px solid green; border-radius: 2px; color: green; padding: 2px 4px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                </div>
+                <div class="acoes" style="margin-bottom: 40px; border-bottom: 1px solid gray; border-radius: 4px;">
+                    <a href="{% url 'tcc.editar' t.codigo %}" class="btn btn-sm btn-warning" title="Editar categoria"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+
+                    <a href="{% url 'tcc.excluir' t.codigo %}" class="btn btn-sm btn-danger" title="Excluir" style="color: black;"><i class="fa-solid fa-trash-can"></i> Excluir</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="link" style="margin-top: 80px;">
+        <a href="{% url 'home' %}" class="btn btn-success" style="margin-top: 5px; margin-bottom: 5px;background-color: #ff0000; width: 250px; padding: 10px; border: none;"><i class="fa-solid fa-backward-step"></i> VOLTAR</a>
+    </div>
+
+    </body>
+{% endblock %}
